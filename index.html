@@ -45,7 +45,7 @@ const wrapper = document.createElement('div')
     '</div>'
   ].join('')
 
-  `${id}`.append(wrapper)
+  document.getElementById(id).append(wrapper)
 }
 
 
@@ -53,7 +53,7 @@ document.getElementById('bububu').onclick = async function g() {
 const value = document.getElementById('exampleFormControlInput1').value 
 
   const apiKey = "42e59f78769e49d9a08125110242911";
-  fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${value}&lang=ru&`)
+  fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${value}&lang=ru&`)
     .then(response => response.json())
     .then(result => {
       console.log(result);
@@ -64,8 +64,8 @@ const value = document.getElementById('exampleFormControlInput1').value
     })
     .catch(error => {
     
-    alert(`До вас дзвонить пан Малюк Василь Васильович!
-    Woops! Вийшла якась помилка!`)
+    setalert("test", `До вас дзвонить пан Малюк Василь Васильович!
+    Woops! Вийшла якась помилка!`, "danger")
     });
 
   console.log(document.getElementById('exampleFormControlInput1').value);
